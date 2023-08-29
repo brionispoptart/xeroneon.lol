@@ -3,32 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Xeroneon</title>
+<title>Xeroser</title>
 <style>
   body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     height: 100vh;
-    background-color: #faf0e6;
+    background-color: #f0f0f0;
   }
   img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
   audio {
     display: none; /* Hide the audio element */
   }
+  .play-button {
+    width: 150px;
+    height: 50px;
+    background-image: url('button.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
+  <button class="play-button" id="playButton"></button>
   <img src="face.png" alt="Image">
-  <audio autoplay loop>
+  <audio id="audioElement" loop>
     <source src="office.wav" type="audio/wav">
     Your browser does not support the audio element.
   </audio>
+  <script>
+    const playButton = document.getElementById("playButton");
+    const audioElement = document.getElementById("audioElement");
+
+    playButton.addEventListener("click", () => {
+      audioElement.play();
+      playButton.style.display = "none"; // Hide the play button once audio starts playing
+    });
+  </script>
 </body>
 </html>
