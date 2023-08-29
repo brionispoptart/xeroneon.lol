@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Image Display</title>
+<title>Xeroneon</title>
 <style>
   body {
     margin: 0;
@@ -19,9 +19,16 @@
     height: auto;
     margin-bottom: 20px;
   }
+  audio {
+    display: none; /* Hide the audio element */
+  }
 </style>
 </head>
 <body>
-  <img src="face.png" alt="Image">
+  <img src="your-image.png" alt="Image">
+  <audio autoplay loop>
+    <source src="your-audio.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
